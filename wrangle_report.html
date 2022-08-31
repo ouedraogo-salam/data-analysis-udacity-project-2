@@ -14579,55 +14579,31 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Plan : Préparation des données</p>
-<ol>
-<li>Introduction</li>
-<li>Rassemblement des données</li>
-<li>Evaluation des données</li>
-<li>Netoyage des données</li>
-<li>Conclusion</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Pr%C3%A9paration-des-donn%C3%A9es">Pr&#233;paration des donn&#233;es<a class="anchor-link" href="#Pr%C3%A9paration-des-donn%C3%A9es">&#182;</a></h1><h2 id="1.-INTRODUCTION">1. INTRODUCTION<a class="anchor-link" href="#1.-INTRODUCTION">&#182;</a></h2><p>La préparation des données est une étape très importante en analyse de données. En effet, En tant que data analystes, nous pouvons être confronté à analyser des données de source divers afin de mieux répondre à une problématique. Pour réussir efficacement notre travail, il est primordial de préparer nos données. Cette étape prend en entrer des données très sales et donne en sortie des données propres et de bonnes qualités prés à usage. Étant donné l’importance de cette étape, il a été divisé en trois grandes partis notamment : Collecte, Évaluation et Nettoyage des données.  Dans ces partis il est question pour nous de préparer nos données tout en respecter scrupuleusement les différentes étapes citées plus haut. Autrement, il sera questions de collecter les données sur plusieurs sources différentes, évaluer ces données afin de détecter les problèmes que pose les données et enfin nettoyer les différents problèmes recueillent ces données. Plus loin nous ferons une analyse et visualisation de ces données qui verront l’objet d’un autre document.</p>
-<h2 id="2.-Rassemblement-des-donn%C3%A9es">2. Rassemblement des donn&#233;es<a class="anchor-link" href="#2.-Rassemblement-des-donn%C3%A9es">&#182;</a></h2><p>Rassemblement des données
-Aussi appelée collecte de données, elle est la première étape dans le processus de préparation des données. Avant cette étape, nous étions démunis de données et après celle-ci, nous en sommes munies. En effet, il s’agit de collecter les toutes les données nécessaires pour la réussite de notre analyse. Il existe deux grandes manières de collecter les données à savoir, la collecte manuelle et la collecte programmatique. La première consiste à se rendre sur la page des données et de les télécharger en des clicks. Par contre la collecte programmatique consiste à collecter les données en utilisant des outils de programmation à l’image de python. Cette seconde méthode est la plus conseillé pour deux raisons : la mise en échelle et la reproductibilité.
-En ce qui concerne notre projet, il s’agit d’évaluer les données de @WeRateDogs, un utilisateur de tweet. Pour ce faire, nous avons en notre disposition les archives twitter de WeRateDogs dans un fichier nommé twitter_archive_enhanced.csv dont nous devons télécharger manuellement pour la suite de notre projet de collecte. Un autre fichier dont nous avons également accès est image_predictions.tsv, un fichier contenant les prédictions d’image de chat qui est hébergé sur le serveur de Udacity cette adresse :  <a href="https://d17h27t6h515a5.cloudfront.net/topher/2017/August/599fd2ad_image-predictions/image-predictions.tsv">https://d17h27t6h515a5.cloudfront.net/topher/2017/August/599fd2ad_image-predictions/image-predictions.tsv</a>. En outre nous devons interrogée l’API de twitter avec l’outil tweepy de python pour collecter des données supplémentaires et nécessaires pour notre évaluations. Dans cette partie, le but recherché est de collecter les données de WeRateDogs sur twitter. Pour ce faire, nous devons tout d'abord créer un compte développeur à la suite de la création d’un compte twitter. Une fois ce compte créer, nous devons créer un projet dans lequel nous créons notre première application. C'est cette application qui va nous permettre d'accéder aux données en utilisant L'API de twitter (Tweepy). Cependant à default de ne pas pouvoir collecter des données via l'API de tweeter, Udacity met à notre disposition ces données collectées. Et la suite de notre travail consiste à construire nos dataframe avec ces données de Udacity.</p>
-<h2 id="3.-Evaluation-des-donn%C3%A9es">3. Evaluation des donn&#233;es<a class="anchor-link" href="#3.-Evaluation-des-donn%C3%A9es">&#182;</a></h2><p>L'évaluation des données est l'étape situé entre la collecte(rassemblement) et le nettoyage des données. En effet, c'est le précurseur du nettoyage. La réussite du nettoyage dépendant de cette étape. L'évaluation consiste à évaluer les données afin de détecter les données sales et les données désordonnées. Elle peut se faire de deux manières différentes. Nous avons l'évaluation visuelle qui consiste à défiler l'ensemble de dataset afin de repérer les éventuels problèmes. L’évaluation programmatique qui consiste à utiliser des outils comme pandas de python en vue de détecter les problèmes cités plus haut. La seconde méthode bien que recommander, il est possible de combiner les deux car nécessaire et indispensable. Durant l'évaluation de nos données nous avons detecté plus plusieurs problème de qualité et de structure qui seront l'objet des lignes suivantes.</p>
-<h3 id="QUALIT%C3%89">QUALIT&#201;<a class="anchor-link" href="#QUALIT%C3%89">&#182;</a></h3><h4 id="df_clean">df_clean<a class="anchor-link" href="#df_clean">&#182;</a></h4><ol>
+<h1 id="Pr%C3%A9paration-des-donn%C3%A9es">Pr&#233;paration des donn&#233;es<a class="anchor-link" href="#Pr%C3%A9paration-des-donn%C3%A9es">&#182;</a></h1><h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&#182;</a></h2><p>La préparation des données est une étape très importante en analyse de données et comprend trois grands partis notamment : Collecte, Évaluation et Nettoyage des données. Pour le traitement des données, nous avons collecté les données sur plusieurs sources différentes, évalué ces données afin de détecter les problèmes que posent les données et enfin nettoyé les différents problèmes recessés.</p>
+<h2 id="Collecte-des-donn%C3%A9es">Collecte des donn&#233;es<a class="anchor-link" href="#Collecte-des-donn%C3%A9es">&#182;</a></h2><p>Nous devons travailler sur les données de @WeRateDogs, un utilisateur tweet. Pour ce faire, nous avons en notre disposition les archives twitter de WeRateDogs dans un fichier nommé « twitter_archive_enhanced.csv » dont nous devons télécharger manuellement pour la suite de notre projet de collecte. Un autre fichier dont nous avons également accès est image_predictions.tsv, un fichier contenant les prédictions d’image de chat qui est hébergé sur le serveur de Udacity cette adresse :  <a href="https://d17h27t6h515a5.cloudfront.net/topher/2017/August/599fd2ad_image-predictions/image-predictions.tsv">https://d17h27t6h515a5.cloudfront.net/topher/2017/August/599fd2ad_image-predictions/image-predictions.tsv</a>. En outre nous devons interrogée l’API de twitter avec l’outil tweepy de python pour collecter des données supplémentaires et nécessaires pour notre évaluations. Dans cette partie, le but recherché est de collecter les données de WeRateDogs sur twitter. Cependant à default de ne pas pouvoir collecter des données via l'API de tweeter, Udacity met à notre disposition ces données collectées.</p>
+<h2 id="3.-%C3%89valuation-des-donn%C3%A9es">3. &#201;valuation des donn&#233;es<a class="anchor-link" href="#3.-%C3%89valuation-des-donn%C3%A9es">&#182;</a></h2><p>L'évaluation des données est l'étape situé entre la collecte(rassemblement) et le nettoyage des données. En effet, c'est le précurseur du nettoyage. L'évaluation consiste à évaluer les données afin de détecter les données sales et les données désordonnées. Durant l'évaluation de nos données nous avons détecté plus plusieurs problèmes de qualité et de structure qui seront l'objet des lignes suivantes.</p>
+<h3 id="QUALIT%C3%89">QUALIT&#201;<a class="anchor-link" href="#QUALIT%C3%89">&#182;</a></h3><h4 id="df_twitter_clean">df_twitter_clean<a class="anchor-link" href="#df_twitter_clean">&#182;</a></h4><ol>
 <li>Plus de 181 lignes sont des retweets.</li>
 <li>Il y'a plus de 90% de données manquantes dans les colonnes : retweeted_status_id, retweeted_status_user_id, retweeted_status_timestamp.</li>
-<li>user_friends ne possède qu'une seule données '104' représentant les amis de l'utilisateur.</li>
 <li>type de données erronées(timestamp).</li>
-<li>id, created_at, full_text identiques respectivement à tweet_id, timestamp, text.</li>
-<li>user_followers , retweet, favorite sont de type float au lieu de int.</li>
 <li>in_reply_to_status_id, in_reply_to_user_id sont de type float au lieu de int.</li>
 <li>Données manquantes replacées par <code>None</code> dans les colonnes (doggo, pupper, puppo, flooter).</li>
 <li>Données manquantes représentées par <code>None</code> dans la colonne name.</li>
 <li>Environ 158 lignes ne sont pas des évaluations de chiens.</li>
 <li>Certains lignes évalue plus d'un chien.</li>
-<li>index 705 n'est pas une annotation de chien, mais d’une autre espèce.</li>
+<li>index 705 n'est pas une annotation de chien, mais d’une autre espèce.
+#### df_images_clean</li>
+<li>Enregistrement manquantes (2075 au lieu de 2356)
+### ORDRE</li>
 </ol>
-<h4 id="df_images">df_images<a class="anchor-link" href="#df_images">&#182;</a></h4><ol>
-<li>Enregistrement manquantes (2075 au lieu de 2356)</li>
-</ol>
-<h3 id="ORDRE">ORDRE<a class="anchor-link" href="#ORDRE">&#182;</a></h3><h4 id="df_clean">df_clean<a class="anchor-link" href="#df_clean">&#182;</a></h4><ol>
-<li>la colonne source présente de données avec des balises HTML contenant à la fois l'url et du texte.</li>
+<h4 id="df_twitter_clean">df_twitter_clean<a class="anchor-link" href="#df_twitter_clean">&#182;</a></h4><ol>
+<li>La colonne source présente de données avec des balises HTML contenant à la fois l'url et du texte.</li>
 <li>Dans la colonne expanded_urls, il y'a des lignes qui ont plus des urls.</li>
-<li>les colonnes doggo,floofer, pupper, puppo sont des observations et non des variables.</li>
+<li>Les colonnes doggo,floofer, pupper, puppo sont des observations et non des variables.
+Cette étape nous ait permis de mettre en évidence les différents problèmes de qualité et de structure des données. La suite consistera à nettoyer ces données.</li>
 </ol>
-<p>Cette étape nous ait permis de mettre en évidence les différents problèmes de qualité et de structure des données. La suite consistera à nettoyer ces données.</p>
-<h2 id="4.-Netoyage-des-donn%C3%A9es">4. Netoyage des donn&#233;es<a class="anchor-link" href="#4.-Netoyage-des-donn%C3%A9es">&#182;</a></h2><p>Le nettoyage des données est la dernière étape après l’évaluation des données. En effet, dans cette étape, le data analystes doit nettoyer tous les problèmes qualités et de structures collectées lors de la phase précédente. Le nettoyage des données se fait en trois étapes principales : Définition, Codage et Test. La Définition consiste à identifier chaque problème puis à le documenter afin que d’autre personnes puissent comprendre notre code. Le Codage consiste à transformer nos définitions en code python exécutable. Et enfin, le Test qui consiste à Tester si le nettoyage c’est bien passé. Nous avons veuillez à respecter ces étapes lors du nettoyage de nos données.</p>
-<h2 id="5.-Conclusion">5. Conclusion<a class="anchor-link" href="#5.-Conclusion">&#182;</a></h2><p>La préparation est une phase très importante dans l’analyse des données et bien d’autre. Elle nous permet d’avoir une bonne qualité des données. Elle occupe la majeure partie du temps du processus d’analyse de données. Elle est constituée de trois (3) étapes notamment, la collecte, l’évaluation et le nettoyage. Cependant, il faut noter que la préparation des données est itérative. Après le nettoyage, il convient de réévaluer l’ensemble des données afin de déterminer d’autre problème qui pourraient passer inaperçues.</p>
+<h2 id="4.-Nettoyage-des-donn%C3%A9es">4. Nettoyage des donn&#233;es<a class="anchor-link" href="#4.-Nettoyage-des-donn%C3%A9es">&#182;</a></h2><p>Le nettoyage des données est la dernière étape après l’évaluation des données. Le nettoyage des données se fait en trois étapes principales : Définition, Codage et Test. Nous avons veuillez à respecter ces étapes lors du nettoyage de nos données. Dans cette partie, nous avons eu à nettoyer tous les problèmes de qualités et de structure poser lors de l’évaluation.</p>
+<h2 id="5.-Conclusion">5. Conclusion<a class="anchor-link" href="#5.-Conclusion">&#182;</a></h2><p>La préparation est une phase très importante dans l’analyse des données et bien d’autre. Elle nous permet d’avoir une bonne qualité des données. Il s’agissait pour nous de collecter les données de l’utilisateur @WeRateDogs, l’évaluer et nettoyer. Les données collectées présentent de nombreuses valeurs manquantes ce qui constitue un problème pour le nettoyage. À l’issue dut nettoyage, nous avons fusionné les différentes dataset afin de l’enregistrer sous le nom « twitter_archive_master.csv ».</p>
 
 </div>
 </div>
